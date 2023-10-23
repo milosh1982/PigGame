@@ -9,15 +9,13 @@ function App() {
     activePlayer === "Player-1"
       ? setActivePlayer("Player-2")
       : setActivePlayer("Player-1");
-    setGamePoints(0);
-    setRandomNumber(0);
   }
   const randomNumberGenerator = () => {
     const number = Math.floor(Math.random() * 6 + 1);
 
     if (number === 1) {
       setGamePoints(0);
-      setRandomNumber(0);
+      setRandomNumber(number);
       switchPlayer();
     }
     if (number !== 1) {
@@ -45,6 +43,8 @@ function App() {
       setTotalPoints([0, 0]);
     }
     switchPlayer();
+    setGamePoints(0);
+    setRandomNumber(0);
   };
   return (
     <>
